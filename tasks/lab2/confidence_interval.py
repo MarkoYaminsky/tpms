@@ -1,0 +1,3 @@
+class ConfidenceInterval:
+    def __init__(self):
+        ...
