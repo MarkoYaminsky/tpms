@@ -3,12 +3,13 @@ from collections import Counter
 from matplotlib import pyplot as plot
 
 from tools.decorators import rounded
+from tools.from_file import FromFile
 from tools.utils import print_table, show_plot
 
 
-class DiscreteSample:
+class DiscreteSample(FromFile):
     def __init__(self):
-        self.sample = self.get_data_from_file()
+        self.sample = self.get_data("data")
         self.stats = Counter(self)
 
     def __iter__(self):
@@ -23,8 +24,8 @@ class DiscreteSample:
     def __str__(self):
         return ", ".join([str(element) for element in self])
 
-    def get_data_from_file(self):
-        with open("data") as file:
+    def get_data(self, file_name):
+        with open(file_name) as file:
             joined_data_string = "".join(file.readlines())
             return [int(element) for element in joined_data_string.split()]
 

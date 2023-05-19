@@ -1,5 +1,5 @@
-from tasks.lab1.discrete_sample import DiscreteSample
-from tasks.lab1.lab_1_interval_sample import Lab1IntervalSample
+from labs.lab_1.discrete_sample import DiscreteSample
+from labs.lab_1.lab_1_interval_sample import Lab1IntervalSample
 
 if __name__ == "__main__":
     sample = DiscreteSample()
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     sample.draw_frequency_graph()
     interval_sample = Lab1IntervalSample(sample)
     print("4) Інтервальний статистичний ряд")
-    interval_sample.build_table()
+    interval_sample.build_table(["∆j", "Nj"])
     interval_sample.draw_frequency_histogram()
     print(
         f"Мода інтервального статистичного ряду: {interval_sample.mode}, медіана: {interval_sample.median}"

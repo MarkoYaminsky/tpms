@@ -1,9 +1,9 @@
 from math import log10
 
-from tasks.lab1.discrete_sample import DiscreteSample
+from labs.lab_1.discrete_sample import DiscreteSample
 from samples.interval_sample import BaseIntervalSample, Interval
 from tools.decorators import rounded
-from tools.utils import print_table, show_plot
+from tools.utils import show_plot
 
 from matplotlib import pyplot as plot
 
@@ -95,14 +95,6 @@ class Lab1IntervalSample(BaseIntervalSample):
 
     def get_sum_of_values_before_point(self, point):
         return sum([item[1] for item in self.get_sample_from_discrete(point).items()])
-
-    def build_table(self):
-        print_table(
-            [
-                ["∆j", *self.interval_sample.keys()],
-                ["Nj", *self.interval_sample.values()],
-            ]
-        )
 
     def draw_frequency_histogram(self):
         data = zip(
